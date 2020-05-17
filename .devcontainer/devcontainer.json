@@ -1,0 +1,11 @@
+{
+    "name": "React Native",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+    },
+    "appPort": [ 9000 ],
+    "remoteUser": "vscode",
+	"extensions": []
+}
