@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   memoList: {
     width: '100%',
     flex: 1,
-    paddingTop: 78
   },
 
   memoListItem: {

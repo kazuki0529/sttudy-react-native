@@ -1,11 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { Color } from 'csstype';
 
-class CircleButton extends React.Component {
+interface ICircleButtonProps {
+  style: ViewStyle;
+  color: Color;
+}
+
+class CircleButton extends React.Component<ICircleButtonProps, {}> {
   render() {
+    const { style, color } = this.props;
+
+    const bgColor =  color == 'white' ? '#fff' : '#E31676'
+    const textColor = color == 'white' ? '#E31676' : '#fff'
+
     return (
-      <View style={styles.circleButton}>
-        <Text style={styles.circleButtonTitle}>
+      <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
+        <Text style={[styles.circleButtonTitle, {color: textColor}]}>
           {this.props.children}
         </Text>
       </View>
@@ -20,7 +31,6 @@ const styles = StyleSheet.create({
     right: 32,
     width: 48,
     height: 48,
-    backgroundColor: '#E31676',
     borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,7 +41,6 @@ const styles = StyleSheet.create({
   circleButtonTitle: {
     fontSize: 32,
     lineHeight: 32,
-    color: '#fff',
   },
 })
 
